@@ -2,4 +2,4 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(dev)")
+("(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(quit)" "(exit)" "(go)" "(dev)" "(dev)")
