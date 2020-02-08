@@ -1,4 +1,4 @@
-(ns film-ratings.index
+(ns film-ratings.handler.index
   (:require [ataraxy.core :as ataraxy]
             [ataraxy.response :as response]
             [film-ratings.views.index :as views.index]
