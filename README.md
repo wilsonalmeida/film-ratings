@@ -1,4 +1,5 @@
 # film-ratings
+[![CircleCI](https://circleci.com/gh/wilsonalmeida/film-ratings/tree/master.svg?style=svg)](https://circleci.com/gh/wilsonalmeida/film-ratings/tree/master)
 
 FIXME: description
 
