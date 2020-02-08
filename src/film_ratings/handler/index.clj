@@ -6,6 +6,6 @@
             [clojure.pprint :refer [pprint]]))
 
 
-(defmethod ig/init-key :film-ratings.handler/index [_ options]
+(defmethod ig/init-key :film-ratings.handler.index/index [_ options]
   (fn [{[_] :ataraxy.core/result}]
     [::response/ok (views.index/list-options)]))

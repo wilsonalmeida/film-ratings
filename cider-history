@@ -2,4 +2,12 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(reset)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(quit)" "(exit)" "(go)" "(dev)" "(dev)")
+("(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(in-ns 'dev)" "(dev)" "(reset)" "(ataraxy.response/->response {\"name\" \"wilson\", \"age\" \"25\"})" "(ataraxy.response/->response {\"name\" \"wilson\"})" "(ataraxy.response/->response \"Hello\")" "(ataraxy.response/->response ::response/ok)" "ataraxy.response/->response " "(ataraxy.response/ok)" "(:ataraxy.response/ok)" "::response/ok" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
+                                      {\"__anti-forgery-token\" \"HELLO\" \"age\" 25 \"name\" \"Wilson\"}
+                                      \"__anti-forgery-token\"))" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
+                                      {\"__anti-forgery-token\" \"HELLO\" :age 25 :name \"Wilson\"}
+                                      \"__anti-forgery-token\"))" "(dissoc
+                            {\"__anti-forgery-token\" \"HELLO\" :age 25 :name \"Wilson\"}
+                            \"__anti-forgery-token\")" "(dissoc
+                            {\"__anti-forgery-token\" \"HELLO\" :name \"Wilson\"}
+                            \"__anti-forgery-token\")" "(dissoc {\"__ anti-forgery-token\" \"HELLO\" :name \"Wilson\"} \"__anti-forgery-token\")" "(dissoc {:anti-forgery-token \"HELLO\" :name \"Wilson\"} \"__anti-forgery-token\")" "(doc dissoc)" "(doc reduce-kv)" "(require '[clojure.repl :refer [doc]])" "::response/ok" "(go)" "(dev)" "(re-find #\"href=\\\"/list-film\\\"\" (second response))" "(re-find #\"href=\\\"/add-film\\\"\" (second response))" "(re-find #\"href\" (second response))" "(re-find #\"href\") (second response)" "(second response)" "(first response)" "response" "(def response (handler (mock/request :get \"/\")))" "(def response (handler (mock/request :get) \"/\"))" "(def response (handler (mock/request) :get \"/\"))" "(def handler (ig/init-key :film-ratings.handler/index {}))" "response" "(def response (mock/request :get \"/\"))" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(quit)" "(exit)" "(go)" "(dev)" "(dev)")
