@@ -7,7 +7,7 @@
 (deftest check-index-handler
   (testing "Ensure that the index handler returns two links for add
   and list films")
-  (let [handler (ig/init-key :film-ratings.handler/index {})
+  (let [handler (ig/init-key :film-ratings.handler.index/index {})
         response (handler (mock/request :get "/"))]
     (is (= :ataraxy.response/ok (first response)))
     (is (= "href=\"/add-film\""
