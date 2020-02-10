@@ -2,7 +2,7 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(in-ns 'dev)" "(dev)" "(reset)" "(ataraxy.response/->response {\"name\" \"wilson\", \"age\" \"25\"})" "(ataraxy.response/->response {\"name\" \"wilson\"})" "(ataraxy.response/->response \"Hello\")" "(ataraxy.response/->response ::response/ok)" "ataraxy.response/->response " "(ataraxy.response/ok)" "(:ataraxy.response/ok)" "::response/ok" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
+("(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(in-ns 'dev)" "(dev)" "(reset)" "(ataraxy.response/->response {\"name\" \"wilson\", \"age\" \"25\"})" "(ataraxy.response/->response {\"name\" \"wilson\"})" "(ataraxy.response/->response \"Hello\")" "(ataraxy.response/->response ::response/ok)" "ataraxy.response/->response " "(ataraxy.response/ok)" "(:ataraxy.response/ok)" "::response/ok" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
                                       {\"__anti-forgery-token\" \"HELLO\" \"age\" 25 \"name\" \"Wilson\"}
                                       \"__anti-forgery-token\"))" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
                                       {\"__anti-forgery-token\" \"HELLO\" :age 25 :name \"Wilson\"}

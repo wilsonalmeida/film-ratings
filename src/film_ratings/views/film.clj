@@ -6,65 +6,65 @@
 (defn create-film-view
   []
   (page
-   [:div.container.jumbotron.bg-light
-    [:div.row
-     [:h2 "Add a film"]]
+   [:div.ui.form
+    [:h2.ui.dividing.header "Add a film"]
     [:div
      (form-to [:post "/add-film"]
               (anti-forgery-field)
-              [:div.form-group.col-12
+              [:div.field
                (label :name "Name:")
-               (text-field {:class "mb-3 form-control" :placeholder
+               (text-field {:class "field" :placeholder
                             "Enter film name"} :name)]
-              [:div.form-group.col-12
+              [:div.field
                (label :description "Description:")
-               (text-area {:class "mb-3 form-control" :placeholder
+               (text-area {:class "field" :placeholder
                            "Enter film description"} :description)]
-              [:div.form-group.col-12
+              [:div.field
                (label :ratings "Rating (1-5):")]
-              [:div.form-group.btn-group.col-12
+
+              [:div.inline.fields
                (map (labeled-radio "rating") (repeat 5 false) (range
                                                                1 6))]
-              [:div.form-group.col-12.text-center
-               (submit-button {:class "btn btn-primary text-center"} "Add")]
+              (submit-button {:class "ui button" :tabindex 0} "Add")
               )]]))
 
 (defn- film-attributes-view
   [name description rating]
-  [:div
-   [:div.row
-    [:div.col-2 "Name:"]
-    [:div.col-10 name]]
+  [:div.ui.list
+   [:div.ui.item
+    [:div.header "Name:"]
+    name]
    (when description
-     [:div.row
-      [:div.col-2 "Description:"]
-      [:div.col-10 description]])
+     [:div.ui.item
+      [:div.header "Description:"]
+      description])
    (when rating
-     [:div.row
-      [:div.col-2 "Rating:"]
-      [:div.col-10 rating]])])
+     [:div.ui.item
+      [:div.header "Rating:"]
+      rating])])
 
 (defn film-view
   [{:keys [name description rating]} {:keys [errors messages]}]
   (page
-   [:div.container.jumbotron.bg-light
-    [:div.row
-     [:h2 "Film"]]
+   [:div.ui.segment
+    [:h2 "Film"]
     (film-attributes-view name description rating)
     (when errors
-      (for [error (doall errors)]
-        [:div.row.alert.alert-danger
-         [:div.col error]]))
+      [:div.ui.error.message
+       [:i.close.icon]
+       (for [error (doall errors)]
+         [:ul.list error])])
     (when messages
-      (for [message (doall messages)]
-        [:div.row.alert.alert-success
-         [:div.col message]]))]))
+      [:div.ui.success.message
+       [:i.close.icon]
+       (for [message (doall messages)]
+         [:ul.list message])])]))
 
 (defn list-films-view
   [films {:keys [messages]}]
   (page
-   [:div.container.jumbotron.bg-light
-    [:div.row [:h2 "Films"]]
+   [:div.ui.segment
+    [:h2.header "Films"]
     (for [{:keys [name description rating]} (doall films)]
       [:div
        (film-attributes-view name description rating)
