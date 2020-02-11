@@ -29,26 +29,30 @@
               )]]))
 
 (defn- film-attributes-view
-  [name description rating]
-  [:div.ui.list
-   [:div.ui.item
-    [:div.header "Name:"]
-    name]
-   (when description
-     [:div.ui.item
-      [:div.header "Description:"]
-      description])
-   (when rating
-     [:div.ui.item
-      [:div.header "Rating:"]
-      rating])])
+  [name description rating listview]
+  (if listview
+    [:div.five.column.row
+     [:div.column name]
+     (when description
+       [:div.column description])
+     (if rating
+       [:div.column  rating]
+       [:div.column ""])
+     [:div.ui.button "Edit"]
+     [:div.ui.button "Delete"]]
+    [:div.container
+     [:div.item "Name: " name]
+     [:div.item "Description: " description ]
+     [:div.item "Rating: " rating ]
+     ])
+  )
 
 (defn film-view
   [{:keys [name description rating]} {:keys [errors messages]}]
   (page
    [:div.ui.segment
     [:h2 "Film"]
-    (film-attributes-view name description rating)
+    (film-attributes-view name description rating false)
     (when errors
       [:div.ui.error.message
        [:i.close.icon]
@@ -63,13 +67,20 @@
 (defn list-films-view
   [films {:keys [messages]}]
   (page
-   [:div.ui.segment
+   [:div
     [:h2.header "Films"]
-    (for [{:keys [name description rating]} (doall films)]
-      [:div
-       (film-attributes-view name description rating)
-       [:hr]])
-    (when messages
-      (for [message (doall messages)]
-        [:div.row.alert.alert-success
-         [:div.col message]]))]))
+    [:div.ui.segment
+     [:div.ui.relaxed.grid
+      [:div.five.column.row
+       [:div.column [:h4.header "Name:"] [:hr]]
+       [:div.column [:h4.header "Description:"] [:hr]]
+       [:div.column [:h4.header "Rating:"] [:hr]]
+       [:div.column ""]
+       [:div.column ""]]]
+     (for [{:keys [name description rating]} (doall films)]
+       [:div.ui.relaxed.grid
+        (film-attributes-view name description rating true)])
+     (when messages
+       (for [message (doall messages)]
+         [:div.ui.error.message
+          [:ul.list message]]))]]))
