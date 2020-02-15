@@ -4,6 +4,7 @@
             [film-ratings.boundary.film :as boundary.film]
             [film-ratings.views.film :as views.film]
             [integrant.core :as ig]
+            [ring.util.codec :refer [percent-decode]]
             [clojure.pprint :refer [pprint]]))
 
 (defmethod ig/init-key :film-ratings.handler.film/show-create [_ _]
@@ -26,7 +27,18 @@
 
 (defmethod ig/init-key :film-ratings.handler.film/list [_ {:keys [db]}]
   (fn [_]
+    (pprint "In list films")
     (let [films-list (boundary.film/list-films db)]
       (if (seq films-list)
         [::response/ok (views.film/list-films-view films-list {})]
         [::response/ok (views.film/list-films-view [] {:messages ["No films found."]})]))))
+
+
+(defmethod ig/init-key :film-ratings.handler.film/destroy [_ {:keys [db]}]
+  (fn [{[_ name] :ataraxy/result :as request}]
+    (pprint (format "In destroy handler, name is %s" name))
+    (let [result (boundary.film/destroy-film db (percent-decode name))]
+      (pprint (format "Result is %s" result))
+      [::response/ok (views.film/default-view result)]
+      ))
+  )

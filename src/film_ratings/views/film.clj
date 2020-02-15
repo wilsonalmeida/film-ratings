@@ -36,15 +36,17 @@
      (when description
        [:div.column description])
      (if rating
-       [:div.column  rating]
+       [:div.column rating]
        [:div.column ""])
-     [:div.ui.button "Edit"]
-     [:div.ui.button "Delete"]]
+     [:div.ui.button {:href "/edit-film"} "Edit"]
+     [:div.ui.button {:href "/delete-film"} "Delete"]]
     [:div.container
      [:div.item "Name: " name]
      [:div.item "Description: " description ]
      [:div.item "Rating: " rating ]
-     ])
+     [:div.ui.button {:href "/edit-film"} "Edit"]
+     [:div.ui.button {:href "/delete-film"} "Delete"]]
+    )
   )
 
 (defn film-view
@@ -82,5 +84,21 @@
         (film-attributes-view name description rating true)])
      (when messages
        (for [message (doall messages)]
-         [:div.ui.error.message
+         [:div.ui.succes.message
           [:ul.list message]]))]]))
+
+(defn default-view
+  [{:keys [errors messages]}]
+  (page
+   [:div.ui.segment
+    (when errors
+      [:div.ui.error.message
+       [:i.close.icon]
+       (for [error (doall errors)]
+         [:ul.list error])])
+    (when messages
+      [:div.ui.success.message
+       [:i.close.icon]
+       (for [message (doall messages)]
+         [:ul.list message])])]
+   ))
