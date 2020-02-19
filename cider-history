@@ -2,7 +2,79 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(reset)" "(codec/percent-decode \"Test%20film\")" "(codec/percent-decode \"Test%5C%20film\")" "(require '[ring.util.codec :as codec])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(get-in config [:duct.middleware.web/defaults :security ])" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "config" "(config)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(go)" "(dev)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(get-in config [:duct.middleware.web/defaults :security])" "(get-in config [:duct.middleware.web/defaults])" "(:duct-middleware.web/defaults  config)" "(:duct-middleware.web/site  config)" "(:duct-middleware.web  config)" "(:duct-middleware.web/defaults config)" "config" "(reset)" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "config" "(go)" "config" "(dev)" "config" "(reset)" "(with-redefs config  (update-in config [:params :security] assoc :anti-forgery  false))" "(type config)" "(def config  (update-in config [:params :security] assoc :anti-forgery  false))" "(update-in config [:params :security] assoc :anti-forgery  false)" "(update-in config [:params :security ] assoc {:anti-forgery  false})" "(update-in config [:params :security :anti-forgery] apply false)" "(update-in config [:params :security :anti-forgery] false)" "(update-in config [params security anti-forgery] false)" "config" "(reset)" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(in-ns 'dev)" "(dev)" "(reset)" "(ataraxy.response/->response {\"name\" \"wilson\", \"age\" \"25\"})" "(ataraxy.response/->response {\"name\" \"wilson\"})" "(ataraxy.response/->response \"Hello\")" "(ataraxy.response/->response ::response/ok)" "ataraxy.response/->response " "(ataraxy.response/ok)" "(:ataraxy.response/ok)" "::response/ok" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
+("(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(loop-dogs pets)" "(defn loop-dogs [pets]
+(loop [pet pets 
+       dogs []]
+  (if (first pet)
+    (recur (rest pet)
+           (if (= :dog (:type (first pet)))
+             (conj dogs (first pet))
+             dogs))
+    dogs)))" "(loop-dogs pets)" "(def pets [
+                     {:name \"Fluffykins\" :type :cat}
+                     {:name \"Sparky\" :type :dog}
+                     {:name \"Tibby\" :type :dog}
+                     {:name \"Al\" :type :fish}
+                     {:name \"Victor\" :type :bear}
+                 ])" "(defn loop-dogs [pets]
+            (loop [pets pets
+                              dogs []]
+                      (if (first pets)
+                                    (recur (rest pets)
+                                                              (if (= :dog (:type (first pets)))
+                                                                                       (conj dogs (first pets))
+                                                                                                              dogs))
+                                                dogs)))" "(add-five 100)" "(def add-five (adder 5))" "(defn adder [x]
+        (print \"X: \" x)
+          (fn [a] (+ x a)))" "(defn adder [x]
+          (fn [a] (+ x a)))" "(map #(macro-hello %) [\"Brian\" \"Not Brian\"])" "(map macro-hello [\"Brian\" \"Not Brian\"])" "(map fn-hello [\"Brian\" \"Not Brian\"])" "(macro-hello \"Wilson\")" "(defmacro macro-hello [x]
+        `(str \"Hello \" ~x))" "(macro-hello \"Wilson\")" "(defmacro macro-hello [x]
+        `(str \"Hello\" ~x))" "(macro-hello \"Wilson\")" "(defmacro macro-hello [x]
+        `(println \"Hello\" ~x))" "(fn-hello \"Wilson\")" "(defn fn-hello [x]
+        (str \"Hello, \" x \"!\"))" "(seq 
+       (concat (list 'map) (list 'println) (list [45])))" "(concat (list 'map) (list 'println) (list [45]))" "(list (concat (list 'map) (list 'println) (list [45])))" "(list (concat (list map) (list println) (list [45])))" "(list (concat (list map) (list println) (list [45))))" "(list (concat (clojure.core/map) (clojure.core/println) ([45])))" "(concat (clojure.core/map) (clojure.core/println) ([45]))" "(concat (clojure.core/map)(clojure.core/println)([45]))" "(clojure.core/list 'clojure.core/map) (clojure.core/list 'clojure.core/println) (clojure.core/list [foo])" "(clojure.core/concat
+  (clojure.core/list 'clojure.core/map)
+  (clojure.core/list 'clojure.core/println)
+  (clojure.core/list [foo]))" "(def foo 45)" "(clojure.core/concat
+  (clojure.core/list 'clojure.core/map)
+  (clojure.core/list 'clojure.core/println)
+  (clojure.core/list [foo]))" "'`(map println ~[foo])" "(macroexpand-1 '(foo (doseq [x (range 5)]
+                             (println x))
+                           :done))" "(defmacro foo
+        [& body]
+        `(do-something ~@body))" "(macroexpand-1 '(foo (doseq [x (range 5)]
+                             (println x))
+                           :done))" "(defmacro foo
+        [& body]
+        `(do-something ~body))" "(macroexpand-1 '(foo (doseq [x (range 5)]
+                             (println x))
+                           :done))" "(defmacro foo
+        [& body]
+        `(do-something ~@body))" "'((def x 123) (def y 456))" "(concat (list 'do) (list \"Hello\"))" "(concat (list 'do) \"Hello\")" "(let [defs '((def x 123)
+                   (def y 456))]
+        (concat (list 'do) defs))" "(def y 456)" "(let [defs '((def x 123))])" "(map char \"Hell\")" "(apply char \"Hell\")" "(char  (seq [\"Hello\" \"Jack\"]))" "(seq [\"Hello\" \"Jack\"])" "(seq [\"Hello\"])" "(concat [\"Hello\" \"Jack\"] [\"Hello\" \"Rose\"])" "(concat \"hello\" \"Jack\")" "`(println ~(str (str foo \"hello\") \"DEf\"))" "`(println ~(concat (str foo \"hello\") \"DEf\"))" "(str foo)" "`(println ~(keyword (str foo)))" "`(map println (~@foo))" "`(map println [~@foo])" "`(map println ~@[foo])" "`(map println ~@foo)" "`(map println ~foo)" "`(map println ~[foo])" "`(map println [~foo])" "(def foo [1 2 84 99])" "`(map println [~foo])" "(loop [col (range 1 5)]
+        (when-let [[a & b] (seq col)]
+          (print (format \"A: %s, B: %s\" a b))
+          (recur b)))" "(loop [col (range 1 100)]
+        (when-let [[a & b] (seq col)]
+          (print (format \"A: %s, B: %s\" a b))
+          (recur b)))" "(when-let [[a & b] (seq col)]
+        (print b)) " "(when-let [[a & b] (seq col)]
+        (print a)) " "(seq col)" "(def col [1 2 3 4 5 6])" "(macroexpand '(foreach [x [1 2 3]]
+                               (println x)))" "(defmacro foreach [[sym coll] & body]
+        `(loop [coll# ~coll]
+           (when-let [[~sym & xs#] (seq coll#)]
+             ~@body
+             (recur xs#))))" "(macroexpand '(foreach [x [1 2 3]]
+                               (println x)))" "(macroexpand-1 '(foreach [x [1 2 3]]
+                               (println x)))" "(defmacro foreach [[sym coll] & body]
+        `(loop [coll# ~coll]
+           (when-let [[~sym & xs#] (seq coll#)]
+             ~@body
+             (recur xs#))))" "~@body" "(when-let [[~sym & xs#] (seq coll#)])" "`(loop [coll# ~coll])" "(defmacro foreach [[sym coll] & body])" "(reset)" "(resp/header {:body  \"hello\"}  \"anti-forgery-token\" \"ajsddjfldsafjd;s\")" "(resp/header \"hello\"  \"anti-forgery-token\" \"ajsddjfldsafjd;s\")" "(resp/header \"anti-forgery-token\" \"ajsddjfldsafjd;s\")" "(reset)" "(prin a)" "(reset)" "(prin a)" "(defn prin [{[_ t] :ataraxy/result}]
+       (pprint t))" "(prin a)" "(defn prin [{[_ t] :ataraxy/result}]
+       (pprint a))" "(defn [{[_ t] :ataraxy/result}]
+       (pprint a))" "(def a {:ataraxy/result [:film-ratings.handler.index/index]})" " (:ataraxy/result {:ataraxy/result [:film-ratings.handler.index/index]})" "(first (:ataraxy/result {:ataraxy/result [:film-ratings.handler.index/index]}))" "(first (:ataraxy.core/result {:ataraxy/result [:film-ratings.handler.index/index]}))" "(resp/header (resp/response \"Hello\") \"anti-forgery-key\" \"sljdflasflasdjasdkfjas\")" "(resp/header \"anti-forgery-key\" \"sljdflasflasdjasdkfjas\")" "(-> (resp/response \"hello\") (resp/content-type \"text/html; charset=UTF-8\"))" "(-> (resp \"hello\") (resp/content-type \"text/html; charset=UTF-8\"))" "(reset)" "(resp/response \"Hello\")" "(require '[ring.util.response :as resp])" "(response/ok  \"Hello\")" "(::response/ok  \"Hello\")" "[::response/ok  \"Hello\"]" "[::response/ok ]" "(response/ok \"Hello\")" "(require '[ataraxy.response :as response])" "(at/ok \"Hello\")" "(require '[duct.module.ataraxy :as at])" "(reset)" "config" "(go)" "(dev)" "(reset)" "(codec/percent-decode \"Test%20film\")" "(codec/percent-decode \"Test%5C%20film\")" "(require '[ring.util.codec :as codec])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(reset)" "(get-in config [:duct.middleware.web/defaults])" "(get-in config [:duct.middleware.web/defaults :security ])" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "config" "(config)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(go)" "(dev)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(reset)" "(get-in config [:duct.middleware.web/defaults :security :anti-forgery])" "(get-in config [:duct.middleware.web/defaults :security])" "(get-in config [:duct.middleware.web/defaults])" "(:duct-middleware.web/defaults  config)" "(:duct-middleware.web/site  config)" "(:duct-middleware.web  config)" "(:duct-middleware.web/defaults config)" "config" "(reset)" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "config" "(go)" "config" "(dev)" "config" "(reset)" "(with-redefs config  (update-in config [:params :security] assoc :anti-forgery  false))" "(type config)" "(def config  (update-in config [:params :security] assoc :anti-forgery  false))" "(update-in config [:params :security] assoc :anti-forgery  false)" "(update-in config [:params :security ] assoc {:anti-forgery  false})" "(update-in config [:params :security :anti-forgery] apply false)" "(update-in config [:params :security :anti-forgery] false)" "(update-in config [params security anti-forgery] false)" "config" "(reset)" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(in-ns 'dev)" "(dev)" "(reset)" "(ataraxy.response/->response {\"name\" \"wilson\", \"age\" \"25\"})" "(ataraxy.response/->response {\"name\" \"wilson\"})" "(ataraxy.response/->response \"Hello\")" "(ataraxy.response/->response ::response/ok)" "ataraxy.response/->response " "(ataraxy.response/ok)" "(:ataraxy.response/ok)" "::response/ok" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
                                       {\"__anti-forgery-token\" \"HELLO\" \"age\" 25 \"name\" \"Wilson\"}
                                       \"__anti-forgery-token\"))" "(reduce-kv (fn [m k v] (assoc m (keyword k) v)) {} user)" "user" "(def user (dissoc
                                       {\"__anti-forgery-token\" \"HELLO\" :age 25 :name \"Wilson\"}
