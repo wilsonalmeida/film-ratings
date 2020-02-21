@@ -2,7 +2,7 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(loop-dogs pets)" "(defn loop-dogs [pets]
+("(reset)" "site-defaults" "(require '[ring.middleware.defaults :refer :all])" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(loop-dogs pets)" "(defn loop-dogs [pets]
 (loop [pet pets 
        dogs []]
   (if (first pet)

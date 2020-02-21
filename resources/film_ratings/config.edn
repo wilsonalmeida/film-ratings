@@ -1,8 +1,6 @@
 {:duct.profile/base
  {:duct.core/project-ns film-ratings
-  :duct.handler/root {:middleware [#ig/ref
-                                   :film-ratings.handler.middleware/anti-forgery-field
-                                   #ig/ref :film-ratings.handler.middleware/my-wrap-anti-forgery]}
+  :duct.handler/root {:middleware [#ig/ref :film-ratings.handler.middleware/anti-forgery-field]}
   :duct.router/ataraxy
   {:routes
    {[:get "/"] [:film-ratings.handler.index/index]
@@ -18,8 +16,6 @@
    }
 
   :film-ratings.handler.middleware/anti-forgery-field {}
-  :film-ratings.handler.middleware/my-wrap-anti-forgery {}
-
   :film-ratings.handler.index/index  {}
   :film-ratings.handler.film/show-create {}
   :film-ratings.handler.film/create {:db #ig/ref :duct.database/sql}
@@ -36,7 +32,7 @@
    :down ["DROP TABLE film"]
    }
   ;; Disable anti-forgery check for testing from command line httpie
-  :duct.middleware.web/defaults {:security {:anti-forgery false}}
+  ;;:duct.middleware.web/defaults {:security {:anti-forgery false}}
   }
 
  :duct.profile/dev   #duct/include "dev"
