@@ -7,4 +7,5 @@
                 ;; :asset-path "/js"
                 :modules {:main {:entries [film-ratings.client]
                                  :init-fn film-ratings.client/main}}
-                :optimizations :none}}}
+                :dev {:compiler-options {:optimizations :none}}
+                :release {:compiler-options {:optimizations :simple}}}}}

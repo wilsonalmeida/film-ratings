@@ -2,7 +2,38 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(reset)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(shadow.cljs.repl)" "(go)" "(dev)" " (require '[shadow.cljs.devtools.api :as shadow]) " "(in-ns 'user)" "(watch :app)" "(shadow/watch :app)" "(in-ns 'shadow)" " (require '[shadow.cljs.devtools.api :as shadow]) " " (do (require '[shadow.cljs.devtools.api :as shadow]) (shadow/watch :app) (shadow/nrepl-select :app))" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "config" "(figwheel.client/start {:websocket-url \"ws://localhost:3449/figwheel-ws\"})
+("(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(prod)" "(reset)" "config" "(require '[integrant.repl.state :refer [config system]])" "config" "(go)" "go" "(prod)" "config" "(duct/load-hierarchy)" "config" "(-main)" "(in-ns 'film-ratings.main)" "(require 'film-ratings.main)" "(require 'prod)" "(prod)" "(-main)" "(require '[duct.logger :as log])
+(require '[duct.logger.timbre :as timbre])
+(require '[duct.core :as duct])
+(require '[integrant.core :as ig])
+(require '[clojure.java.io :as io])
+(def profiles [:duct.profile/prod])
+(defn get-config []
+  (duct/read-config (io/resource \"film_ratings/config.edn\")))
+
+(defn -main []
+  (-> (get-config) (duct/prep-config profiles) (duct/exec-config)))
+" "(require '[duct.logger :as log])
+(require '[duct.logger.timbre :as timbre])
+(def profiles [:duct.profile/prod])
+(defn get-config []
+  (duct/read-config (io/resource \"film_ratings/config.edn\")))
+
+(defn -main []
+  (-> (get-config) (duct/prep-config profiles) (duct/exec-config)))
+
+(require '[duct.core :as duct])
+(require '[integrant.core :as ig])
+(require '[clojure.java.io :as io])
+" "(reset)" "(-main)" "(log/info \"Hello\")" "(require '[duct.logger :as log])" "(require '[duct.logger.timbre :as timbre])" "(-main)" "(defn -main []
+        (-> (get-config) (duct/prep-config profiles) (duct/exec-config)))" "(def profiles [:duct.profile/prod])" "(defn get-config []
+        (duct/read-config (io/resource \"film_ratings/config.edn\")))" "(require '[duct.core :as duct])" "(require '[integrant.core :as ig])" "(require '[clojure.java.io :as io])" "(defn get-config []
+        (duct/read-config (io/resource \"film_ratings/config.edn\")))" "(-main)" "-main" "(defn -main []
+        (-> (get-config) (duct/prep-config profiles) (duct/exec-config)))" "(def profiles [:duct.profile/prod])" "(def profile s [:duct.profile/prod])" "(defn -main []
+        (-> (get-config) (duct/prep-config profiles) (duct/exec-config)))" "(defn -main []
+        (-> (get-config) (duct/prep-config) (duct/exec-config)))" "(get-config)" "(defn get-config []
+        (duct/read-config (io/resource \"film_ratings/config.edn\")))" "(ig/prep #(duct/prep-config (read-config) [:duct.profile/test]))" "(defn read-config [] (duct/read-config (io/resource \"film_ratings/config.edn\")))" "(duct/read-config (io/resource \"film_ratings/config.edn\"))" "(require '[clojure.java.io :as io])" "(require [clojure.java.io :as io])" "(reuiqre [clojure.java.io :as io])" "(require '[integrant.core :as ig])" "(require '[duct.core :as duct]
+       )" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(shadow.cljs.repl)" "(go)" "(dev)" " (require '[shadow.cljs.devtools.api :as shadow]) " "(in-ns 'user)" "(watch :app)" "(shadow/watch :app)" "(in-ns 'shadow)" " (require '[shadow.cljs.devtools.api :as shadow]) " " (do (require '[shadow.cljs.devtools.api :as shadow]) (shadow/watch :app) (shadow/nrepl-select :app))" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "config" "(figwheel.client/start {:websocket-url \"ws://localhost:3449/figwheel-ws\"})
 " "(figwheel.connect)" "(figwheel-sidecar.auto-builder)" "(reset)" "(go)" "(reset)" "config" "(reset)" "config" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "site-defaults" "(require '[ring.middleware.defaults :refer :all])" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(loop-dogs pets)" "(defn loop-dogs [pets]
 (loop [pet pets 
        dogs []]

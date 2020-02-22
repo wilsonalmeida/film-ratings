@@ -5,16 +5,21 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [duct/core "0.7.0"]
                  [duct/module.ataraxy "0.3.0"]
-                 [g7s/module.shadow-cljs "0.1.1"]
+                 ;; [g7s/module.shadow-cljs "0.1.1"]
                  [duct/module.logging "0.4.0"]
+                 [duct/logger.timbre "0.4.1"]
                  [duct/module.sql "0.5.0"]
                  [duct/module.web "0.7.0"]
                  [org.xerial/sqlite-jdbc "3.27.2"]
+                 [org.postgresql/postgresql "42.1.4"]
+                 [duct/database.sql.hikaricp "0.4.0"]
                  [hiccup "1.0.5"]]
   :plugins [[duct/lein-duct "0.12.1"]]
   :main ^:skip-aot film-ratings.main
   :uberjar-name "film-ratings.jar"
   :resource-paths ["resources" "target/resources"]
+  :clean-targets ^{:protect false} ["target"]
+  ;; "resources/film_ratings/public/js"
   :prep-tasks     ["javac" "compile" ["run" ":duct/compiler"]]
   :middleware     [lein-duct.plugin/middleware]
   :profiles
