@@ -1,0 +1,10 @@
+{:source-paths  ["src"]
+ :dev-http {8000 "resources/film_ratings/public"}
+ :nrepl {:port 9000}
+ :builds {:app {:target :browser
+                :output-to "resources/film_ratings/public/js/main.js"
+                :output-dir "resources/film_ratings/public/js"
+                ;; :asset-path "/js"
+                :modules {:main {:entries [film-ratings.client]
+                                 :init-fn film-ratings.client/main}}
+                :optimizations :none}}}

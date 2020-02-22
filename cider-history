@@ -2,7 +2,8 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(reset)" "site-defaults" "(require '[ring.middleware.defaults :refer :all])" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(loop-dogs pets)" "(defn loop-dogs [pets]
+("(reset)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(shadow.cljs.repl)" "(go)" "(dev)" " (require '[shadow.cljs.devtools.api :as shadow]) " "(in-ns 'user)" "(watch :app)" "(shadow/watch :app)" "(in-ns 'shadow)" " (require '[shadow.cljs.devtools.api :as shadow]) " " (do (require '[shadow.cljs.devtools.api :as shadow]) (shadow/watch :app) (shadow/nrepl-select :app))" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "config" "(figwheel.client/start {:websocket-url \"ws://localhost:3449/figwheel-ws\"})
+" "(figwheel.connect)" "(figwheel-sidecar.auto-builder)" "(reset)" "(go)" "(reset)" "config" "(reset)" "config" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "site-defaults" "(require '[ring.middleware.defaults :refer :all])" "config" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(reset)" "(dev)" "(go)" "(dev)" "(loop-dogs pets)" "(defn loop-dogs [pets]
 (loop [pet pets 
        dogs []]
   (if (first pet)

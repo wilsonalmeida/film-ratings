@@ -8,10 +8,12 @@ pom.xml.asc
 *.class
 /.lein-*
 /.nrepl-port
-/.dir-locals.el
 /profiles.clj
 /dev/resources/local.edn
 /dev/src/local.clj
 /db/dev.sqlite
 /resources/film_ratings/public
 *~
+/.shadow-cljs/
+/node_modules/
+/.dir-locals.el

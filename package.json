@@ -1,0 +1,17 @@
+{
+  "name": "film-ratings",
+  "version": "1.0.0",
+  "description": "Demo of duct using shadow-cljs",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "shadoow-cljs watch app",
+    "release": "shadow-cljs release app"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "shadow-cljs": "^2.8.52"
+  },
+  "author": "Dionysius W Almeida",
+  "license": "GPL-3.0-or-later"
+}

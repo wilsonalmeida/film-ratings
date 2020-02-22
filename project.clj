@@ -5,6 +5,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [duct/core "0.7.0"]
                  [duct/module.ataraxy "0.3.0"]
+                 [g7s/module.shadow-cljs "0.1.1"]
                  [duct/module.logging "0.4.0"]
                  [duct/module.sql "0.5.0"]
                  [duct/module.web "0.7.0"]
@@ -19,6 +20,7 @@
   :profiles
   {:dev  [:project/dev :profiles/dev]
    :repl {:prep-tasks   ^:replace ["javac" "compile"]
+          :dependencies [[cider/piggieback "0.4.0"]]
           :repl-options {:init-ns user}}
    :uberjar {:aot :all}
    :profiles/dev {}

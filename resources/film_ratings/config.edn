@@ -32,7 +32,8 @@
    :down ["DROP TABLE film"]
    }
   ;; Disable anti-forgery check for testing from command line httpie
-  ;;:duct.middleware.web/defaults {:security {:anti-forgery false}}
+  ;; :duct.middleware.web/defaults {:security {:anti-forgery false}}
+  ;; :duct.middleware.web/defaults {:static {:resources ["film_ratings/resources/film_ratings/public"]}}
   }
 
  :duct.profile/dev   #duct/include "dev"
@@ -45,4 +46,15 @@
  :duct.module.web/site {}
 
  :duct.module/sql {}
+ :duct.module/shadow-cljs
+ {:source-paths  ["src"]
+  :dev-http {8000 "resources/film_ratings/public"}
+  :nrepl {:port 9000}
+  :builds {:app {:target :browser
+                 :output-to "resources/film_ratings/public/js/main.js"
+                 :output-dir "resources/film_ratings/public/js"
+                 ;; :asset-path "/js"
+                 :modules {:main {:entries [film-ratings.client]
+                                  :init-fn film-ratings.client/main}}
+                 :optimizations :none}}}
  }
