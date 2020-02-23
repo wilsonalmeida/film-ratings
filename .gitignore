@@ -17,3 +17,4 @@ pom.xml.asc
 /.shadow-cljs/
 /node_modules/
 /.dir-locals.el
+/.env
