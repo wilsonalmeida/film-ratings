@@ -38,7 +38,53 @@
 
  :duct.profile/dev   #duct/include "dev"
  :duct.profile/local #duct/include "local"
- :duct.profile/prod  #duct/include "prod"
+ :duct.profile/prod
+ {
+  :duct.logger/timbre
+  {:level     :info
+   :appenders {:spit #ig/ref :duct.logger.timbre/spit
+               :brief #ig/ref :duct.logger.timbre/brief}
+   :timestamp-opts {:pattern "dd/MM/yyyy HH:mm:ss ZZ"
+                    :locale :jvm-default}}
+
+  :duct.logger.timbre/spit {:fname "logs/production.log"}
+  :duct.logger.timbre/brief {:min-level :report}
+
+  ;; Use either this format
+
+  ;; :duct.database/sql
+  ;; {:connection-uri #duct/env ["JDBC_DATABASE_URL"]}
+  ;; where connection-uri contains:
+  ;; "jdbc:postgresql://<host>:<port>/<db>?user=<username>&password=<password>";
+
+  ;; Or use this format
+  :duct.database/sql {:adapter "postgresql"
+                      :port-number #duct/env [ "DB_PORT" :or "5432" ]
+                      :server-name #duct/env [ "DB_HOST" ]
+                      :database-name "filmdb"
+                      :username "filmuser"
+                      :password #duct/env [ "DB_PASSWORD" ]
+                      }
+
+  :duct.database.sql/hikaricp
+  {:auto-commit        true
+   :read-only          false
+   :connection-timeout 30000
+   :validation-timeout 5000
+   :idle-timeout       600000
+   :max-lifetime       1800000
+   :minimum-idle       10
+   :maximum-pool-size  10
+   :pool-name          "db-pool"
+   ;; :adapter            "postgresql"
+   ;; :username           "filmuser"
+   ;; :password           "wilson"
+   ;; :database-name      "filmdb"
+   ;; :server-name        "localhost"
+   ;; :port-number        5432
+   :register-mbeans    false
+   }
+  }
 
  :duct.module/logging {}
 

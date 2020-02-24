@@ -2,7 +2,7 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(prod)" "(reset)" "config" "(require '[integrant.repl.state :refer [config system]])" "config" "(go)" "go" "(prod)" "config" "(duct/load-hierarchy)" "config" "(-main)" "(in-ns 'film-ratings.main)" "(require 'film-ratings.main)" "(require 'prod)" "(prod)" "(-main)" "(require '[duct.logger :as log])
+("config" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(prod)" "(reset)" "config" "(require '[integrant.repl.state :refer [config system]])" "config" "(go)" "go" "(prod)" "config" "(duct/load-hierarchy)" "config" "(-main)" "(in-ns 'film-ratings.main)" "(require 'film-ratings.main)" "(require 'prod)" "(prod)" "(-main)" "(require '[duct.logger :as log])
 (require '[duct.logger.timbre :as timbre])
 (require '[duct.core :as duct])
 (require '[integrant.core :as ig])
