@@ -2,7 +2,308 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("config" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(prod)" "(reset)" "config" "(require '[integrant.repl.state :refer [config system]])" "config" "(go)" "go" "(prod)" "config" "(duct/load-hierarchy)" "config" "(-main)" "(in-ns 'film-ratings.main)" "(require 'film-ratings.main)" "(require 'prod)" "(prod)" "(-main)" "(require '[duct.logger :as log])
+("(def system (ig/init conf))" "(.stop (:adapter/jetty system))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+        (fn [_] (resp/response (str \"Hello \" (clojure.string/join \", \" names)))))" "(def system (ig/init conf))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+        (fn [_] (resp/response (str \"Hello \"))))" "(.stop (:adapter/jetty system))" "(def system (ig/init conf))" "(.stop (:adapter/jetty system))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+        (fn [_] (resp/response (str \"Hello \"))))" "(def system (ig/init conf))" "(.stop (:adapter/jetty system))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] ((resp/response (str \"Hello \")))))" "(.stop (:adapter/jetty system))" "(def system (ig/init conf))" "(.stop (:adapter/jetty system))" "(ig/halt! system)" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] ((resp/response (str \"Hello \" (clojure.string/join \", \" names))))))" "(def system (ig/init conf))" "(.stop (:adapter/jetty system))" "system" "(def system (ig/init conf))" "(ig/halt! system)" "(def conf {:adapter/jetty {:port 3000, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/refset [:const/name])}
+                 [:const.name/alice :const/name] {:name \"Alice\"}
+                 [:const.name/bob :const/name] {:name \"Bob\"}})" "(def system (ig/init conf))" "(ig/halt! system)" "(def conf {:adapter/jetty {:port 3000, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/ref [:const/name])}
+                 [:const.name/alice :const/name] {:name \"Alice\"}
+                 [:const.name/bob :const/name] {:name \"Bob\"}})" "(def conf {:adapter/jetty {:port 3000, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/ref :const.name/alice)}
+                 [:const.name/alice :const/name] {:name \"Alice\"}
+                 [:const.name/bob :const/name] {:name \"Bob\"}})" "conf" "system" "(def system (ig/init conf))" "(.stop (:adapter/jetty system))" "system" "(def system (ig/init conf))" "(def conf {:adapter/jetty {:port 3000, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/ref :const.name/alice)}
+                 [:const.name/alice :const/name] {:name \"Alice\"}
+                 [:const.name/bob :const/name] {:name \"Bob\"}})" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :const.name [_ {:keys [name]}]
+          name)" "(def conf {:adapter/jetty {:port 3000, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/ref :const.name/alice)}
+                 [:const.name/alice :const.name] {:name \"Alice\"}
+                 [:const.name/bob :const.name] {:name \"Bob\"}})" "conf" "system" "(ig/halt! system)" "(def system (ig/init conf))" "(.stop (:adapter/jetty system))" "system" "(def system (ig/init conf))" "(ig/halt! system)" "(def conf {:adapter/jetty {:port 3000, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/ref :const.name/alice)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "(def system (ig/init conf))" "(def conf {:adapter/jetty {:port 3000, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "(ig/halt! system)" "conf" "system" "(def system (ig/init conf))" "(defmethod ig/init-key :adapter/jetty [_ {:keys [handler] :as opts}]
+        (jetty/run-jetty handler (-> opts (dissoc :handler) (assoc :join? false))))" "(def system (ig/init conf))" "(defmethod ig/init-key :const.name/bob [_ {:keys [name]}]
+          name)" "(defmethod ig/init-key :const.name/alice [_ {:keys [name]}]
+          name)" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] (
+                  (println (format \"Names : %s\" names))
+                  (resp/response (str \"Hello \" (clojure.string/join \", \" names))))))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [name]}]
+        (fn [_] (resp/response (str \"Hello \"))))" "conf" "(def conf {:adapter/jetty {:port 9003, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "(require '[integrant.core :as ig])" "(def conf {:adapter/jetty {:port 9003, :handler (ig/ref :handler/greet-all)}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "(require '[ring.util.response :as resp])" "(require '[ring.adapter.jetty :as jetty])" "conf" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :handler/greet-all [_ {:keys [name]}]
+        (fn [_] (resp/response (str \"Hello \"))))" "config" "conf" "(def conf {:adapter/jetty {:port 9003, :handler {:key :handler/greet-all}}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "(ig/halt! system)" "(def system (ig/init config))" "(ig/halt! system)" "(def config {:adapter/jetty {:port 9005 :handler (ig/ref :handler/greet)}
+                   :handler/greet {:name \"Alice\"}})" "(def system (ig/init config))" "(ig/halt! system)" "conf" "config" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] (
+                  (println (format \"Names : %s\" names))
+                  (resp/response (str \"Hello \" (clojure.string/join \", \" names))))))" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+        (println (format \"Names : %s\" names))
+          (fn [_] (resp/response (str \"Hello \" (clojure.string/join \", \" names)))))" "system" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :const.name/alice [_ {:keys [name]}]
+          name)" "(defmethod ig/init-key :const.name/bob [_ {:keys [name]}]
+          name)" "system" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :const.name/bob [_ {:keys [name]}]
+          (:name name))" "(defmethod ig/init-key :const.name/alice [_ {:keys [name]}]
+          (:name name))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] (resp/response (str \"Hello \" (clojure.string/join \", \" names)))))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] (resp/response (str \"Hello \" )))))" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] (resp/response (str \"Hello \" ))))" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] (resp/response (str \"Hello \" )))))" "system" "(def system (ig/init conf))" "(def conf {:adapter/jetty {:port 9003, :handler {:key :handler/greet-all}}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "(def system (ig/init conf))" "(ig/halt! system)" "(defmethod ig/init-key :const.name/bob [_ {:keys [name]}]
+          name)" "(defmethod ig/init-key :const.name/alice [_ {:keys [name]}]
+          name)" "(ig/halt! system)" "conf" "(def system (ig/init conf))" "(ig/halt! system)" "(def system (ig/init conf))" "conf" "config" "(ig/halt! system)" "(def system (ig/init conf))" "(def conf {:adapter/jetty {:port 9002, :handler {:key :handler/greet-all}}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "conf" "(ig/halt! conf)" "(ig/init conf)" "(defmethod ig/init-key :const/name [_ {:keys [name]}]
+          name)" "(ig/init conf)" "(def conf {:adapter/jetty {:port 9001, :handler {:key :handler/greet-all}}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "conf" "(ig/init conf)" "(ig/halt! system)" "(ig/halt system)" "(ig/init conf)" "(defmethod ig/init-key :const.name [_ {:keys [name]}]
+          name)" "(ig/init conf)" "(def conf {:adapter/jetty {:port 9000, :handler {:key :handler/greet-all}}
+                 :handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "config" "conf" "(def conf {:handler/greet-all {:names (ig/refset :const/name)}
+                 :const.name/alice {:name \"Alice\"}
+                 :const.name/bob {:name \"Bob\"}})" "(ig/init conf)" "(defmethod ig/init-key :handler/greet-all [_ {:keys [names]}]
+          (fn [_] (resp/response (str \"Hello \" (clojure.string/join \", \" names)))))" "conf" "(def conf {:handler/greet-all {:names (ig/refset :const/name)}
+            :const.name/alice {:name \"Alice\"}
+            :const.name/bob {:name \"Bob\"}})" "(def {:handler/greet-all {:names (ig/refset :const/name)}
+            :const.name/alice {:name \"Alice\"}
+            :const.name/bob {:name \"Bob\"}})" "(def {:handler/greet-all {:names #ig/refset :const/name}
+            :const.name/alice {:name \"Alice\"}
+            :const.name/bob {:name \"Bob\"}})" " :const.name/alice  {:name \"Alice\"}" "{:handler/greet-all {:names #ig/refset :const/name}}" "(-> config ig/prep)" "(def config {:adapter/jetty {:port 9000 :handler (ig/ref :handler/greet)}
+                   :handler/greet {:name \"Alice\"}})" "(-> config ig/prep)" "(-> config /ig/prep)" "system" "config" "(def system (-> config ig/prep ig/init))" "(defmethod ig/init-key :adapter/jetty [_ {:keys [handler] :as opts}]
+        (jetty/run-jetty handler (-> opts (dissoc :handler) (assoc :join? false))))" "(def system (-> config ig/prep ig/init))" "(defmethod ig/init-key :handler/greet [_ {:keys [name]}]
+        (fn [_] (resp/response (str \"Hello \" name))))" "(defmethod ig/halt-key! :adapter/jetty [_ server]
+        (println (format \"Server is %s \" server)) (.stop server))" "(defmethod ig/prep-key :adapter/jetty [_ config]
+        (merge {:port 3000} config))" "(require '[ring.adapter.jetty :as jetty])" "(require '[ring.util.response :as resp])" "(def config {:adapter/jetty { :handler (ig/ref :handler/greet)}
+                   :handler/greet {:name \"Alice\"}})" "(require '[integrant.core :as ig])" "(def config {:adapter/jetty { :handler (ig/ref :handler/greet)}
+                   :handler/greet {:name \"Alice\"}})" "(def system (-> config ig/prep ig/init))" "(ig/halt! system)" "(def system (-> config ig/prep ig/init))" "(ig/halt! system)" "(def system (-> config ig/prep ig/init))" "(def system (->config ig/prep ig/init))" "config" "(-> config ig/prep ig/init)" "config" "(defmethod ig/prep-key :adapter/jetty [_ config]
+        (merge {:port 3000} config))" "(def config {:adapter/jetty { :handler (ig/ref :handler/greet)}
+                   :handler/greet {:name \"Alice\"}})" "config" "system" "(ig/halt! system)" "(def system (ig/init config))" "(def config {:adapter/jetty {:port 3000 :handler (ig/ref :handler/greet)}
+                   :handler/greet {:name \"Alice\"}})" "(defmethod ig/halt-key! :adapter/jetty [_ server]
+        (println (format \"Server is %s \" server)) (.stop server))" "(ig/halt! system)" "system" "(def system (ig/init config))" "(ig/halt! system)" "system" "(ig/halt! system)" "system" "(ig/halt! system)" "(def system (ig/init config))" "(ig/halt! system)" "(defmethod ig/halt-key! :adapter/jetty [_ server]
+        (println server) (.stop server))" "(.stop (:adapter/jetty system))" "system" "(def system (ig/init config))" "(.stop (:adapter/jetty system))" "system" "(ig/halt! system)" "(def system (ig/init config))" "(def config {:adapter/jetty {:port 3000 :handler (ig/ref :handler/greet)}
+                   :handler/greet {:name \"Alice\"}})" "(def config {:adapter/jetty {:port 3000 :handler #ig/ref :handler/greet}
+                   :handler/greet {:name \"Alice\"}})" "(def system (ig/init config))" "(defmethod ig/halt-key! :adapter/jetty [_ server]
+        (.stop server))" "(defmethod ig/init-key :handler/greet [_ {:keys [name]}]
+        (fn [_] (resp/response (str \"Hello \" name))))" "(defmethod ig/init-key :adapter/jetty [_ {:keys [handler] :as opts}]
+        (jetty/run-jetty handler (-> opts (dissoc :handler) (assoc :join? false))))" "(require '[integrant.core :as ig])" "(require '[ring.util.response :as resp])" "(require '[ring.adapter.jetty :as jetty])" "(go)" "(dev)" "(run-tests)" "(deftest migration-test
+(testing \"default migrations table name\"
+(reset-test-state)
+(let [system (ig/init testconfig)]
+  (is (= (find-tables)
+         [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+  (is (= @logs
+         [[::ragtime/applying \":dev/create-foo#f1480e44\"]
+          [::ragtime/applying \":dev/create-bar#6d969ce8\"]])))))" "@logs" "(is (= @logs
+[[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+ [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]]))" "(is (= @logs
+                         [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                        [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))" "(is (= (find-tables)
+                         [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))" "(run-tests)" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init testconfig)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "(run-tests)" "(reset-test-state)" "(run-tests)" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init testconfig)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "(run-tests)" "(require '[duct.migrator.ragtime :as ragtime])" "(ns-aliases *ns*)" "(ns-unalias *ns* 'ragtime)" "(ns-unalias *ns* ragtime)" "(ns-aliases *ns*)" "(ns-unalias (find-ns 'ragtime.core) 'ragtime)" "(require '[duct.migrator.ragtime :as ragtime])" "(remove-ns 'ragtime.core)" "(remove-ns 'ragtime)" "(require '[duct.migrator.ragtime :as ragtime])" "(remove-ns 'ragtime.core)" "(remove 'ragtime.core)" "(run-tests)" "::ragtime/applying" "(require '[duct.migrator.ragtime :as ragtime])" "(remove-ns 'ragtime)" "(unalias 'ragtime)" "(require '[duct.migrator.ragtime :as ragtime])" "(run-tests)" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init testconfig)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "(run-tests)" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init config)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "(require '[clojure.test :refer :all])" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init config)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "(defn reset-test-state []
+         (reset! logs [])
+         (drop-all-tables))" "  (reset! logs [])" "(defn reset-test-state [])" "  (drop-all-tables)" "  (reset! logs [])" "(defn reset-test-state [])" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init config)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "(require '[clojure.test :refer [deftest testing] :as t])" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init config)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "(require '[clojure.test :refer [deftest] :as t])" "(deftest migration-test
+         (testing \"default migrations table name\"
+               (reset-test-state)
+                   (let [system (ig/init config)]
+                           (is (= (find-tables)
+                                               [{:name \"ragtime_migrations\"} {:name \"foo\"} {:name \"bar\"}]))
+                                 (is (= @logs
+                                                     [[::ragtime/applying \":duct.migrator.ragtime-test/create-foo#f1480e44\"]
+                                                                    [::ragtime/applying \":duct.migrator.ragtime-test/create-bar#6d969ce8\"]])))))" "      (is (= (find-tables)))" "    (let [system (ig/init config)])" "    (reset-test-state)" "  (testing \"default migrations table name\")" "(deftest migration-test)" "(t/run-tests)" "(require '[clojure.test :as t])" "::ragtime/applying" "@logs" "(ig/init testconfig)" "(drop-all-tables)" "(def testconfig
+         {:duct.database/sql db-spec
+          
+             :duct.migrator/ragtime
+             {:database   (ig/ref :duct.database/sql)
+                  :strategy   :rebase
+              :logger (->TestLogger logs)
+                  :migrations [(ig/ref ::create-foo)
+                                                (ig/ref ::create-bar)]}
+          
+             [:duct.migrator.ragtime/sql ::create-foo]
+             {:up   [\"CREATE TABLE foo (id int);\"]
+                  :down [\"DROP TABLE foo;\"]}
+          
+             [:duct.migrator.ragtime/sql ::create-bar]
+             {:up   [\"CREATE TABLE bar (id int);\"]
+                  :down [\"DROP TABLE bar;\"]}})" "(defrecord TestLogger [logs]
+         logger/Logger
+           (-log [_ level ns-str file line id event data]
+                 (swap! logs conj [event data])))" "(require '[duct.logger :as logger])" "(defrecord TestLogger [logs]
+         logger/Logger
+           (-log [_ level ns-str file line id event data]
+                 (swap! logs conj [event data])))" "(def logs
+         (atom []))" "@logs" "(ig/init testconfig)" "(defn- drop-all-tables []
+         (doseq [t (find-tables)]
+               (jdbc/execute! db-spec [(str \"DROP TABLE \" (:name t))])))" "(find-tables)" "(defn- find-tables []
+         (jdbc/query db-spec [\"SELECT name FROM sqlite_master WHERE type='table'\"]))" "(def testconfig
+         {:duct.database/sql db-spec
+          
+             :duct.migrator/ragtime
+             {:database   (ig/ref :duct.database/sql)
+                  :strategy   :rebase
+                  :migrations [(ig/ref ::create-foo)
+                                                (ig/ref ::create-bar)]}
+          
+             [:duct.migrator.ragtime/sql ::create-foo]
+             {:up   [\"CREATE TABLE foo (id int);\"]
+                  :down [\"DROP TABLE foo;\"]}
+          
+             [:duct.migrator.ragtime/sql ::create-bar]
+             {:up   [\"CREATE TABLE bar (id int);\"]
+                  :down [\"DROP TABLE bar;\"]}})" "(def testconfig
+         {:duct.database/sql db-spec
+          
+             :duct.migrator/ragtime
+             {:database   (ig/ref :duct.database/sql)
+                  :strategy   :rebase
+                  :logger     (->TestLogger logs)
+                  :migrations [(ig/ref ::create-foo)
+                                                (ig/ref ::create-bar)]}
+          
+             [:duct.migrator.ragtime/sql ::create-foo]
+             {:up   [\"CREATE TABLE foo (id int);\"]
+                  :down [\"DROP TABLE foo;\"]}
+          
+             [:duct.migrator.ragtime/sql ::create-bar]
+             {:up   [\"CREATE TABLE bar (id int);\"]
+                  :down [\"DROP TABLE bar;\"]}})" "(def config
+         {:duct.database/sql db-spec
+          
+             :duct.migrator/ragtime
+             {:database   (ig/ref :duct.database/sql)
+                  :strategy   :rebase
+                  :logger     (->TestLogger logs)
+                  :migrations [(ig/ref ::create-foo)
+                                                (ig/ref ::create-bar)]}
+          
+             [:duct.migrator.ragtime/sql ::create-foo]
+             {:up   [\"CREATE TABLE foo (id int);\"]
+                  :down [\"DROP TABLE foo;\"]}
+          
+             [:duct.migrator.ragtime/sql ::create-bar]
+             {:up   [\"CREATE TABLE bar (id int);\"]
+                  :down [\"DROP TABLE bar;\"]}})" "(jdbc/query db-spec [\"SELECT name FROM sqlite_master WHERE type='table'\"])" "(def db-spec {:connection (jdbc/get-connection {:connection-uri \"jdbc:sqlite:\"})})" "(def db-spec {:connection (jdbc/get-connection {:connection-uri \"jdbc:sqlite\"})})" "(require '[clojure.java.jdbc :as jdbc])" "(:duct.middleware.web/defaults config)" "(:duct.migrator.ragtime/sql config)" "(:duct.database/sql config
+      )" "(ragtime/applied-migrations :film-ratings.migrations/create-film idx)" "config" "(ragtime/applied-migrations db idx)" "(ragtime/migrate db add-foo)" "(ragtime/applied-migrations db idx)" "(ragtime/rollback db add-foo)" "(ragtime/applied-migrations db idx)" "idx" "(def idx  (ragtime/into-index [add-foo])) " "(ragtime/into-index [add-foo])" "(ragtime/into-index db)" "(ragtime/applied-migrations db :run-up!)" "(ragtime/applied-migrations db :up)" "(ragtime/applied-migrations db)" "(ragtime/applied-migrations db :add-foo)" "(ragtime/applied-migrations db \"add-foo\")" "(protocols/applied-migration-ids db)" "(ragtime/migrate db add-foo)" "(ragtime/rollback db add-foo)" "(-> db :data deref)" "(protocols/applied-migration-ids db)" "(ragtime/migrate db add-foo)" "(require '[ragtime.core :as ragtime])" "(ragtime/migrate db add-foo)" "(def add-foo
+         (reify protocols/Migration
+               (id [_] \"add-foo\")
+               (run-up! [_ db] (swap! (:data db) assoc :foo 1))
+               (run-down! [_ db] (swap! (:data db) dissoc :foo))))" "(protocols/applied-migration-ids db)" "(-> db :migrations deref)" "(-> db :data deref)" "(-> db :data @)" "db" "(def db (memory-database))" "(defn memory-database [] 
+       (->MemoryDatabase (atom {}) (atom [])))" "(->MemoryDatabase (atom {}) (atom []))" "(->MemoryDatabase)" "(defrecord MemoryDatabase [data migrations]
+         protocols/DataStore 
+           (add-migration-id [_ id]
+                 (swap! migrations conj id))
+             (remove-migration-id [_ id]
+                   (swap! migrations (partial filterv (complement #{id}))))
+               (applied-migration-ids [_]
+                     (seq @migrations)))" "(require '[ragtime.protocols :as protocols])" "(go)" "(dev)" "(go)" "(dev)" "(ragtime/applied-migrations db idx)" "(ragtime/rollback-last db idx)" "(ragtime/rollback-last db id)" "(ragtime/applied-migrations db idx)" "(ragtime/migrate-all db idx [add-foo])" "idx" "(def idx (ragtime/into-index [add-foo]))" "(ragtime/applied-migrations db :id)" "(ragtime/applied-migrations db \"add-foo\")" "(ragtime/applied-migrations db :add-foo)" "(deref (:data db))" "(deref (:data foo))" "db" "(ragtime/applied-migrations db :foo)" "(-> db :data deref)" "(ragtime/applied-migrations db 0)" "(ragtime/applied-migrations db :down)" "(ragtime/applied-migrations db :up)" "(ragtime/applied-migrations db)" " (ragtime/migrate db add-foo)" "(require '[ragtime.core :as ragtime])" " (ragtime/migrate db add-foo)" "(def add-foo
+         (reify protocols/Migration
+               (id [_] \"add-foo\")
+               (run-up! [_ db] (swap! (:data db) assoc :foo 1))
+               (run-down! [_ db] (swap! (:data db) dissoc :foo))))" " (protocols/applied-migration-ids db)" " (-> db :data deref)" "(def db (memory-database))" "(defn memory-database []
+         (->MemoryDatabase (atom {}) (atom [])))" "(defrecord MemoryDatabase [data migrations]
+         protocols/DataStore 
+           (add-migration-id [_ id]
+                 (swap! migrations conj id))
+             (remove-migration-id [_ id]
+                   (swap! migrations (partial filterv (complement #{id}))))
+               (applied-migration-ids [_]
+                     (seq @migrations)))" "(require '[ragtime.protocols :as protocols])" "(go)" "(dev)" "(in-ns 'user)" "(dev)" "(ragtime/applied-migrations db)" " (ragtime/migrate db add-foo)" "(require '[ragtime.core :as ragtime])" " (ragtime/migrate db add-foo)" "(def add-foo
+         (reify protocols/Migration
+               (id [_] \"add-foo\")
+               (run-up! [_ db] (swap! (:data db) assoc :foo 1))
+               (run-down! [_ db] (swap! (:data db) dissoc :foo))))" " (protocols/applied-migration-ids db)" " (-> db :data deref)" "(def db (memory-database))" "(defn memory-database []
+         (->MemoryDatabase (atom {}) (atom [])))" "(defrecord MemoryDatabase [data migrations]
+         protocols/DataStore 
+           (add-migration-id [_ id]
+                 (swap! migrations conj id))
+             (remove-migration-id [_ id]
+                   (swap! migrations (partial filterv (complement #{id}))))
+               (applied-migration-ids [_]
+                     (seq @migrations)))" "(require '[ragtime.protocols :as protocols])" "(go)" "(dev)" "(def add-foo
+         (reify protocols/Migration
+               (id [_] \"add-foo\")
+               (run-up! [_ db] (swap! (:data db) assoc :foo 1))
+               (run-down! [_ db] (swap! (:data db) dissoc :foo))))" "(protocols/applied-migration-ids db)" "(-> db :data deref)" "(def db (memory-database))" "(defn memory-database []
+         (->MemoryDatabase (atom {}) (atom [])))" "(defrecord MemoryDatabase [data migrations]
+         protocols/DataStore 
+           (add-migration-id [_ id]
+                 (swap! migrations conj id))
+             (remove-migration-id [_ id]
+                   (swap! migrations (partial filterv (complement #{id}))))
+               (applied-migration-ids [_]
+                     (seq @migrations)))" "(require '[ragtime.protocols :as protocols])" "config" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "config" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(reset)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(dev)" "(go)" "(prod)" "(reset)" "config" "(require '[integrant.repl.state :refer [config system]])" "config" "(go)" "go" "(prod)" "config" "(duct/load-hierarchy)" "config" "(-main)" "(in-ns 'film-ratings.main)" "(require 'film-ratings.main)" "(require 'prod)" "(prod)" "(-main)" "(require '[duct.logger :as log])
 (require '[duct.logger.timbre :as timbre])
 (require '[duct.core :as duct])
 (require '[integrant.core :as ig])

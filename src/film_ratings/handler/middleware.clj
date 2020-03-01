@@ -4,14 +4,14 @@
             [ring.util.response :as resp]))
 
 (defn- wrap-anti-forgery [handler]
-  (println (format "Handler is %s" handler))
+  ;;(println (format "Handler is %s" handler))
   (fn [request]
-    (println (format "Request is %s" request))
+    ;;(println (format "Request is %s" request))
     (let [response  (handler request)]
-      (println (format "Response from handler: %s" response))
+      ;;(println (format "Response from handler: %s" response))
       (->  response
            (resp/header "anti-forgery-token"  (force *anti-forgery-token*))))))
 
 (defmethod ig/init-key  ::anti-forgery-field [this config]
-  (println (format "key is %s: " this))
+  ;;(println (format "key is %s: " this))
   #(wrap-anti-forgery %))
